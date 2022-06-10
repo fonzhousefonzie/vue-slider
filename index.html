@@ -14,7 +14,7 @@
     <div id="app">
 
         <div class="container" >
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseover="pauseAutoplay" @mouseout="changeAfter3Seconds">
 
                 <div class="item">
                     <img :src="posted.image" alt="Svezia" />

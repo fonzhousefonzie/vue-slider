@@ -32,6 +32,7 @@ const appVue = new Vue({
         slidesList: slides,
         posted: slides[0],
         id: 0,
+        photoInterval: null,
     },
     methods: {
         goUp(){
@@ -61,7 +62,7 @@ const appVue = new Vue({
         },
         changeAfter3Seconds(){
             const th = this;
-            setInterval(function(){
+            this.photoInterval = setInterval(function(){
                 if(th.id < 4){
                     th.id++;
                     th.posted = slides[th.id];
@@ -71,9 +72,13 @@ const appVue = new Vue({
                 };
              }, 3000);
         },
+        pauseAutoplay(){
+            clearInterval(this.photoInterval);
+        }
     },
     
     mounted(){
         this.changeAfter3Seconds()
+        
     }
 });
