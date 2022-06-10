@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Carosello News</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Slider</title>
+</head>
+<body>
+
+    <div id="app">
+
+        <div class="container" >
+            <div class="slider-wrapper" tabindex="0">
+
+                <div class="item">
+                    <img :src="posted.image" alt="Svezia" />
+                    <div class="text">
+                        <h3>{{ posted.title }}</h3>
+                        <p>{{ posted.text }}</p>
+                    </div>
+                </div>
+
+                <div class="thumbs">
+                    <div class="prev" @click="goUp"></div>
+                    <div class="next" @click="goDown"></div>
+                    <div class="thumb active" v-for="(slide, i) in slidesList" @click="active(i)"> <!-- active-->
+                        <img :src="slidesList[i].image" alt="Svezia"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
