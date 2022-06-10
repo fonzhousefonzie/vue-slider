@@ -34,10 +34,6 @@ const appVue = new Vue({
         id: 0,
     },
     methods: {
-        active(i){
-            this.posted = this.slidesList[i];
-            this.id = i;
-        },
         goUp(){
             if(this.id > 0){
                 this.id--;
@@ -54,5 +50,14 @@ const appVue = new Vue({
             }
             this.posted = slides[this.id];
         },
+        active(i){
+            this.posted = this.slidesList[i];
+            this.id = i;
+        },
+        selected(i){
+            if(i === this.id){
+                return "active";
+            };
+        }
     }
 });

@@ -27,7 +27,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="goUp"></div>
                     <div class="next" @click="goDown"></div>
-                    <div class="thumb active" v-for="(slide, i) in slidesList" @click="active(i)"> <!-- active-->
+                    <div class="thumb" v-for="(slide, i) in slidesList" @click="active(i)" :class="selected(i)"> <!-- active-->
                         <img :src="slidesList[i].image" alt="Svezia"/>
                     </div>
                 </div>
