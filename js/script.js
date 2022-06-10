@@ -58,6 +58,22 @@ const appVue = new Vue({
             if(i === this.id){
                 return "active";
             };
-        }
+        },
+        changeAfter3Seconds(){
+            const th = this;
+            setInterval(function(){
+                if(th.id < 4){
+                    th.id++;
+                    th.posted = slides[th.id];
+                } else {
+                    th.id = 0;
+                    th.posted = slides[th.id];
+                };
+             }, 3000);
+        },
+    },
+    
+    mounted(){
+        this.changeAfter3Seconds()
     }
 });
