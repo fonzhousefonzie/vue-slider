@@ -17,7 +17,7 @@
             <div class="slider-wrapper" tabindex="0" @mouseover="pauseAutoplay" @mouseout="changeAfter3Seconds">
 
                 <div class="item">
-                    <img :src="posted.image" alt="Svezia" />
+                    <img :src="posted.image" :alt="posted.title" />
                     <div class="text">
                         <h3>{{ posted.title }}</h3>
                         <p>{{ posted.text }}</p>
